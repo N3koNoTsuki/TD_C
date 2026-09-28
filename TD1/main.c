@@ -25,10 +25,10 @@ int main(int argc, char* argv[]){
     //1 - Multiplier par 2 = décaler d'un bit vers la gauche
     int a = 15;
     printf("%d * 2 = %d\n\r", a, a<<1);
-    //2 - Garde l'octet de poids fort de b et l'octet de poids faible de c
-    int b = 0xABCD;
-    int c = 0x1234;
-    printf("b = 0x%X | c = 0x%X donc c = 0x%X\n\r", b,c, (b & 0xFF00) + (c & 0x00FF));
+    //2 - Garde l'octet de poids fort de b et l'octet de poids faible de c en a 1
+    int b = 0xABCDEF01;
+    int c = 0x12345678;
+    printf("b = 0x%X | c = 0x%X donc c = 0x%X\n\r", b,c, (b & 0xFFFF0000) + ~(c & 0x0000FFFF));
     //3 - Vérifie si le 10e bit est à 1 dans les deux nombres (masque 0x0200)
     int d = 0x0200;
     int e = 0x0A00;
