@@ -28,7 +28,7 @@ int main(int argc, char* argv[]){
     //2 - Garde l'octet de poids fort de b et l'octet de poids faible de c en a 1
     unsigned int b = 0xFFFFFFFF;
     unsigned int c = 0xAAAAAAAA;
-    printf("b = 0x%X | c = 0x%X donc => 0x%X\n\r", b,c, b >>16 | (~c <<16);
+    printf("b = 0x%X | c = 0x%X donc => 0x%X\n\r", b,c, b >>16 | (~c <<16));
     //3 - Vérifie si le 10e bit est à 1 dans les deux nombres (masque 0x0200)
     int d = 0x0200;
     int e = 0x0A00;
