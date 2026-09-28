@@ -67,7 +67,7 @@ int bitcount(int a) {
 
     int BitCpt = 0;
     for (int i = 0; i < 32; i++) {
-        BitCpt += (a >> i) & 0x0001;
+        BitCpt += (a >> i) & 0x00000001;
     }
     return BitCpt;
 }
