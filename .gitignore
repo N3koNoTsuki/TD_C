@@ -1,0 +1,7 @@
+# Dossiers de compilation
+**/Output/
+
+# Fichiers objets et exécutables
+*.o
+*.out
+*.exe
