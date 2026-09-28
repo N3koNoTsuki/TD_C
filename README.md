@@ -9,14 +9,17 @@ Chaque TD est dans son propre dossier, avec son code, son `Makefile` et son `REA
 | TD | Contenu |
 |----|---------|
 | [TD1](TD1/) | Tri récursif d'un tableau, opérations bit à bit, expressions logiques |
+| [TD2](TD2/) | Pointeurs, allocation dynamique, arguments `argc`/`argv`, passage par valeur/adresse, portée des variables |
 
 ## Compiler et lancer un TD
 
 ```bash
-cd TD1
+cd TDx
 make
-./Output/TD1 <arguments>
+./Output/TDx <arguments>
 ```
+
+(remplacer `TDx` par `TD1`, `TD2`, ...)
 
 `make clean` supprime les fichiers compilés.
 
