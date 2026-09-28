@@ -26,8 +26,8 @@ int main(int argc, char* argv[]){
     int a = 15;
     printf("%d * 2 = %d\n\r", a, a<<1);
     //2 - Garde l'octet de poids fort de b et l'octet de poids faible de c en a 1
-    int b = 0xABCDEF01;
-    int c = 0x12345678;
+    unsigned int b = 0xABCDEF01;
+    unsigned int c = 0x12345678;
     printf("b = 0x%X | c = 0x%X donc c = 0x%X\n\r", b,c, (b & 0xFFFF0000) + ~(c & 0x0000FFFF));
     //3 - Vérifie si le 10e bit est à 1 dans les deux nombres (masque 0x0200)
     int d = 0x0200;
