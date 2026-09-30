@@ -1,4 +1,5 @@
 #include "header.h"
+#include <stdlib.h>
 
 //Pour 2.2
 static int var1 = 0;
@@ -53,6 +54,9 @@ A noter qu'ici un tableau (taille connue) serait plus judicieux\n\r");
     for (int j = 0; j<TAILLE -1; j++) {
         printf("%d | %c\n\r", tab[j], chaine[j]);
     }
+    free(chaine);
+    free(tab);
+    
 
     //Exercice 1.3
     printf("\n\r" BLEU "Exercice 1.3:" RESET "\n\r");
