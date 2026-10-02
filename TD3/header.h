@@ -19,5 +19,18 @@ typedef struct{
     unsigned int note[MAXNOTE];
 }Eleve;
 
+// Exercice 2 : structures avec pointeur vs tableau
+struct S1 {
+    int a;
+    char * ch;
+};
+
+struct S2 {
+    int a;
+    char ch[40];
+};
+
 void saisirfiche(Eleve * eleve);
+void afficherfiche(Eleve * eleve);
+float Moyenne(Eleve * eleve);
 
