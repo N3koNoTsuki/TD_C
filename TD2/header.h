@@ -1,3 +1,7 @@
+// Empêche d'inclure ce fichier plusieurs fois
+#ifndef HEADER_H
+#define HEADER_H
+
 #include "stdio.h"
 #include "stdlib.h"
 
@@ -19,3 +23,4 @@ int Pipo(int i, int *j, int k);
 void afficher_globales(const char *moment);
 void f(int var2);
 
+#endif

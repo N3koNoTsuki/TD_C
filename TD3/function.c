@@ -1,5 +1,4 @@
 #include "header.h"
-#include <stdio.h>
 
 /*
  * function : Saisit une fiche eleve au clavier : age, annee de
@@ -14,8 +13,8 @@
  *  - aucun (la fiche est remplie directement)
  */
 void saisirfiche(Eleve * eleve){
-    printf("Entrer l'age : ");
-    scanf(" %u", &eleve->age);
+    printf("Entrer le nom : ");
+    scanf(" %s", eleve->Name);
     printf("Entrer l'annee de naissance : ");
     scanf(" %u", &eleve->Year_Birth);
     printf("Entrer le nombre de note : ");
@@ -26,7 +25,7 @@ void saisirfiche(Eleve * eleve){
     }
     for (int i=0; i < eleve->nbNote; i++) {
         printf("Entrer la note %d : ",i+1);
-        scanf(" %u", &eleve->note[i]);
+        scanf(" %f", &eleve->note[i]);
         if (eleve->note[i] > 20) {
             printf(ROUGE "Veuillez saisir une note entre 0 et 20 !!!" RESET "\n\r");
             i--; //redo the scanf
@@ -44,11 +43,11 @@ void saisirfiche(Eleve * eleve){
  *  - aucun
  */
 void afficherfiche(Eleve * eleve){
-    printf("Age                : %u\n\r",eleve->age);
+    printf("Name               : %s\n\r",eleve->Name);
     printf("Annee de naissance : %u\n\r",eleve->Year_Birth);
     printf("Nombre de notes    : %u\n\r",eleve->nbNote);
     for (int i=0; i < eleve->nbNote; i++) {
-        printf("  note %d : %u/20\n\r",i+1,eleve->note[i]);
+        printf("  - note %d : %4.2f/20\n\r",i+1,eleve->note[i]);
     }
 }
 
