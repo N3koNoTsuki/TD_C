@@ -20,14 +20,14 @@ void saisirfiche(Eleve * eleve){
     printf("Entrer le nombre de note : ");
     scanf(" %u", &eleve->nbNote);
     if (eleve->nbNote > MAXNOTE) {
-        printf(ROUGE "Nombre de notes trop eleve, ramene a %d" RESET "\n\r", MAXNOTE);
+        printf(ROUGE "Nombre de notes trop eleve, ramene a %d" RESET "\n", MAXNOTE);
         eleve->nbNote = MAXNOTE;
     }
     for (int i=0; i < eleve->nbNote; i++) {
         printf("Entrer la note %d : ",i+1);
         scanf(" %f", &eleve->note[i]);
         if (eleve->note[i] > 20) {
-            printf(ROUGE "Veuillez saisir une note entre 0 et 20 !!!" RESET "\n\r");
+            printf(ROUGE "Veuillez saisir une note entre 0 et 20 !!!" RESET "\n");
             i--; //redo the scanf
         }
     }
@@ -43,11 +43,11 @@ void saisirfiche(Eleve * eleve){
  *  - aucun
  */
 void afficherfiche(Eleve * eleve){
-    printf("Name               : %s\n\r",eleve->Name);
-    printf("Annee de naissance : %u\n\r",eleve->Year_Birth);
-    printf("Nombre de notes    : %u\n\r",eleve->nbNote);
+    printf("Name               : %s\n",eleve->Name);
+    printf("Annee de naissance : %u\n",eleve->Year_Birth);
+    printf("Nombre de notes    : %u\n",eleve->nbNote);
     for (int i=0; i < eleve->nbNote; i++) {
-        printf("  - note %d : %4.2f/20\n\r",i+1,eleve->note[i]);
+        printf("  - note %d : %4.2f/20\n",i+1,eleve->note[i]);
     }
 }
 

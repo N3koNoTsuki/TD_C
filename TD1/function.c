@@ -51,7 +51,7 @@ void afficheTab(int tab[]) {
   for (int i = 0; i < LEN; i++) {
     printf("%i ", tab[i]);
   }
-  printf("\n\r");
+  printf("\n");
 }
 
 /*

@@ -2,8 +2,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 // Couleurs ANSI pour le terminal
 #define ROUGE  "\033[31m"
@@ -13,13 +14,32 @@
 #define CYAN   "\033[36m"
 #define RESET  "\033[0m"
 
-typedef struct filo{
+// Un maillon de la file
+typedef struct element{
     int val;
-    struct filo *next;
-} filo;
+    struct element *next;
+} element;
 
-void init_FILO(filo *filo);
-void Del(filo *filo);
-void Insert(filo *filo);
+// La file : pointeurs sur le premier et le dernier maillon
+typedef struct file{
+    element *debut;
+    element *fin;
+} file;
+
+void init_FIFO(file *f);
+void Insert(file *f, int val);
+int Del(file *f);
+void afficherFIFO(file *f, int select);
+int nbEle(file *f);
+int estVide(file *f);
+void viderFIFO(file *f);
+void test(void);
+
+// Menu interactif
+#define NB_CHOIX 4
+#define TAILLE_MSG 64
+
+void affichage(file *f, const char *message);
+int executerChoix(file *f, int selection, char *message);
 
 #endif

@@ -10,7 +10,7 @@ OBJS	= $(SRCS:%.c=$(OUTDIR)/%.o)
 all:	$(PROGS)
 
 $(PROGS): $(OBJS)
-	$(CC) $(LDFLAGS) $^ -o $@
+	$(CC) $(LDFLAGS) $^ -o $@ 
 
 $(OUTDIR)/%.o: %.c header.h | $(OUTDIR)
 	$(CC) $(CFLAGS) -c $< -o $@

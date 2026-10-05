@@ -33,24 +33,24 @@ void permute(int* a, int* b){
  *  - int : k + 10
  */
 int Pipo(int i, int *j, int k){
-    printf("\n\r" JAUNE "--- Entree dans Pipo ---" RESET "\n\r");
-    printf("i = %d  (copie de b)\n\r", i);
-    printf("j = %p  (copie de l'adresse de b)\n\r", (void *)j);
-    printf("k = %d  (copie de *a, donc de b au moment de l'appel)\n\r", k);
+    printf("\n" JAUNE "--- Entree dans Pipo ---" RESET "\n");
+    printf("i = %d  (copie de b)\n", i);
+    printf("j = %p  (copie de l'adresse de b)\n", (void *)j);
+    printf("k = %d  (copie de *a, donc de b au moment de l'appel)\n", k);
 
     // On ecrit a l'adresse j : la variable du main est modifiee
     *j = 4;
-    printf("\n\r*j = 4  -> on ecrit a l'adresse %p, donc b change\n\r", (void *)j);
+    printf("\n*j = 4  -> on ecrit a l'adresse %p, donc b change\n", (void *)j);
 
     // i est une copie : le b du main ne bouge pas
     i = 5;
-    printf("i = 5   -> seule la copie locale change (i = %d)\n\r", i);
+    printf("i = 5   -> seule la copie locale change (i = %d)\n", i);
 
     // k a ete copie avant *j = 4, il vaut donc toujours 2
     k += 10;
-    printf("k += 10 -> k = %d (k avait copie 2, le *j = 4 ne l'affecte pas)\n\r", k);
+    printf("k += 10 -> k = %d (k avait copie 2, le *j = 4 ne l'affecte pas)\n", k);
 
-    printf(JAUNE "--- Sortie de Pipo, on retourne %d ---" RESET "\n\n\r", k);
+    printf(JAUNE "--- Sortie de Pipo, on retourne %d ---" RESET "\n\n", k);
     return k;
 }
 
@@ -70,7 +70,7 @@ void f(int var2)
     int j = 9;          /* recreee a chaque appel */
     int var1;           /* locale : la var1 static de main.c est invisible ici */
 
-    printf(CYAN "  entree f : parametre var2 = %d, i = %d, j = %d" RESET "\n\r", var2, i, j);
+    printf(CYAN "  entree f : parametre var2 = %d, i = %d, j = %d" RESET "\n", var2, i, j);
 
     i++;
     j--;
@@ -78,7 +78,7 @@ void f(int var2)
     var2 = 6;   /* parametre (copie) de f */
     var3 = 8;   /* pas redeclaree -> GLOBALE modifiee */
 
-    printf(CYAN "  sortie f : var1 locale = %d, var2 param = %d, i = %d, j = %d" RESET "\n\r",
+    printf(CYAN "  sortie f : var1 locale = %d, var2 param = %d, i = %d, j = %d" RESET "\n",
            var1, var2, i, j);
     afficher_globales("apres f");
 }
