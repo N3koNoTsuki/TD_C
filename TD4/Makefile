@@ -12,7 +12,7 @@ all:	$(PROGS)
 $(PROGS): $(OBJS)
 	$(CC) $(LDFLAGS) $^ -o $@ 
 
-$(OUTDIR)/%.o: %.c header.h | $(OUTDIR)
+$(OUTDIR)/%.o: %.c | $(OUTDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OUTDIR):
@@ -20,4 +20,7 @@ $(OUTDIR):
 
 clean:
 	rm -rf $(OUTDIR)
+
+$(OUTDIR)/main.o : header.h 
+$(OUTDIR)/function.o : header.h
 

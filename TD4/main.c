@@ -1,5 +1,6 @@
 #include "header.h"
 
+
 int main(int argc, char *argv[]){
 
     //allocation
@@ -30,3 +31,4 @@ int main(int argc, char *argv[]){
     free(f);
     return 0;
 }
+

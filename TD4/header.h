@@ -26,6 +26,8 @@ typedef struct file{
     element *fin;
 } file;
 
+
+
 void init_FIFO(file *f);
 void Insert(file *f, int val);
 int Del(file *f);

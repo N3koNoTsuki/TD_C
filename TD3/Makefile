@@ -21,3 +21,5 @@ $(OUTDIR):
 clean:
 	rm -rf $(OUTDIR)
 
+$(OUTDIR)/main.o : header.h 
+$(OUTDIR)/function.o : header.h
